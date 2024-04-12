@@ -1,0 +1,335 @@
+:root {
+    --cl-light: #76ABAE;
+    --cl-lightest: #EEE;
+    --cl-dark: #31363F;
+    --cl-darkest: #222831;
+    --fs-smaller: 3vw;
+    --fs-small: 5vw;
+    --fs-medium: 7vw;
+    --fs-large: 10vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Chivo Mono", monospace;
+}
+
+/* Tela indisponivel */
+@media only screen and (max-width: 291.99px) {body{display: none}}
+
+/* Tela Mobile */
+@media only screen and (min-width: 292px) and (max-width: 599.99px) {
+    body header nav .btnClose, body header nav .menu, body main article #intro .introImg, body main .conteiner #calc article #example, body main .conteiner #resultConteiner, body main .conteiner #resultConteiner #result {display: none}
+    
+    body {background-color:var(--cl-lightest)}
+
+    body header {
+        width: 100vw;
+        height: 18vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--cl-darkest);
+    }
+
+    body header div {
+        width: 50vw;
+        height: 10vh;
+        margin-left: 5vw;
+        background-color: var(--cl-lightest);
+    }
+
+    body header nav .btnMenu {
+        height: 12vh;
+        margin-right: 1vw;
+        z-index: 99;
+    }
+    
+    body header nav .btnClose {
+        height: 15vh;
+        position: fixed;
+        top: 8px;
+        right: 0;
+        z-index: 99;
+    }
+
+    body header nav .menu {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: center;
+        position: fixed;
+        background-color: #31363fec;
+        backdrop-filter: blur(10px);
+    }
+
+    body header nav .menu li {
+        margin: 21vh 0 -12vh 0;
+        list-style: none;
+    }
+
+    body header nav .menu li a {
+        font-size: var(--fs-large);
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--cl-lightest);
+    }
+
+    body main .conteiner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    body main .conteiner #intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    body main .conteiner #intro p {
+        width: 95vw;
+        font-size: var(--fs-medium);
+        margin: 5vw 0 7vw 0;
+        color: var(--cl-dark);
+    }
+
+    body main .conteiner #resultConteiner {
+        width: 100vw;
+        height: 295.5vh;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background-color: #eeeeeeb8;
+        backdrop-filter: blur(2px);
+    }
+
+    body main .conteiner #resultConteiner #result {
+        width: 80vw;
+        top: 0;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: absolute;
+        padding: 0 1vw;
+        margin-top: 10px;
+        background-color: var(--cl-dark);
+        z-index: 99;
+    }
+
+    body main .conteiner #resultConteiner #result .newCalc {
+        width: 90%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: var(--fs-small);
+        margin: 4vw 0;
+        color: var(--cl-dark);
+        background-color: var(--cl-light);
+    }
+
+    body main .conteiner #resultConteiner #result .newCalc img {width: 2.5vh}
+
+    body main .conteiner #resultConteiner #result .valCalculated, body main .conteiner #resultConteiner #result .resultValues {
+        width: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    body main .conteiner #resultConteiner #result .valCalculated h2, body main .conteiner #resultConteiner #result .resultValues h2 {
+        font-size: var(--fs-medium);
+        margin-bottom: 4vw;
+        color: var(--cl-lightest);
+    }
+
+    body main .conteiner #resultConteiner #result .valCalculated div, body main .conteiner #resultConteiner #result .resultValues div {
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-size: var(--fs-small);
+        padding: 0 1vw;
+        margin-bottom: 4vw;
+        color: var(--cl-dark);
+        background-color: var(--cl-lightest);
+    }
+
+    body main .conteiner #resultConteiner #result .valCalculated div p, body main .conteiner #resultConteiner #result .resultValues div p {max-width: 100%}
+
+    body main .conteiner #resultConteiner #result .graphics {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    body main .conteiner #resultConteiner #result .graphics h2 {
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--fs-medium);
+        margin-bottom: 4vw;
+        color: var(--cl-dark);
+        background-color: var(--cl-light);
+    }
+
+    body main .conteiner #resultConteiner #result .graphics div {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4vw;
+        background-color: var(--cl-lightest);
+    }
+
+    body main .conteiner #calc {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: var(--cl-dark);
+    }
+
+    body main .conteiner #calc h1 {
+        text-align: center;
+        font-size: var(--fs-large);
+        font-weight: bold;
+        margin: 4vw 0 4vw 0;
+        color: var(--cl-lightest);
+    }
+
+    body main .conteiner #calc article {
+        width: 90vw;
+        margin-bottom: 7vw;
+        background-color: var(--cl-lightest);
+    }
+
+    body main .conteiner #calc article #calculator {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1vw;
+    }
+
+    body main .conteiner #calc article #calculator div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--fs-medium);
+        margin-bottom: 2vw;
+        color: var(--cl-dark);
+    }
+
+    body main .conteiner #calc article #calculator div input, body main .conteiner #calc article #calculator div select {
+        width: 100%;
+        height: 5vh;
+        font-size: var(--fs-small);
+        padding: 1vw;
+        border: 1px solid var(--cl-darkest);
+        border-radius: 0;
+        color: var(--cl-dark);
+        background-color: var(--cl-lightest);
+    }
+
+    body main .conteiner #calc article #calculator div select {background-color: #FFF}
+
+    body main .conteiner #calc article #calculator .btnCompute {align-items: center}
+
+    body main .conteiner #calc article #calculator #compute {
+        width: 70%;
+        height: 8vh;
+        font-size: var(--fs-medium);
+        margin: 4vw 0 3vw 0;
+        border: 1px solid var(--cl-darkest);
+        border-radius: 50px;
+        color: var(--cl-dark);
+        background-color: var(--cl-light);
+    }
+
+    body main .conteiner #about {
+        width: 95vw;
+        display: flex;
+        align-items: center;  
+        flex-direction: column;
+        text-align: center;
+        font-size: var(--fs-medium);
+        margin: 4vw 0 4vw 0;
+        color: var(--cl-dark);
+        background-color: var(--cl-lightest);
+    }
+
+    body main .conteiner #about h2, body main .conteiner #about p {
+        font-weight: bold;
+        margin-bottom: 4vw;
+    }
+
+    body main .conteiner #about p {font-weight: lighter}
+
+    body footer article {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--cl-darkest);
+    }
+
+    body footer article #logoFooter {
+        width: 60vw;
+        height: 10vh;
+        margin: 8vw 0 4vw 0;
+        background-color: var(--cl-lightest);
+    }
+
+    body footer article .footerIcons {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    body footer article .footerIcons img {
+        height: 10vw;
+        margin-bottom: 4vw;
+    }
+
+    body footer article .copyright {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: var(--fs-smaller);
+        margin-bottom: 4vw;
+        color: var(--cl-lightest);
+    }
+
+    body footer article .copyright h3 {font-weight: normal}
+}
+
+/* Tela Tablet */
+@media only screen and (min-width: 570px) and (max-width: 1199.99px) {
+
+}
+
+/* Tela Desktop */
+@media only screen and (min-width: 1200px) {
+
+}
