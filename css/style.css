@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap);
+
 :root {
     --cl-light: #76ABAE;
     --cl-lightest: #EEE;
@@ -17,319 +19,563 @@
 }
 
 /* Tela indisponivel */
-@media only screen and (max-width: 291.99px) {body{display: none}}
+@media only screen and (max-width: 240px) {body{display: none}}
 
 /* Tela Mobile */
-@media only screen and (min-width: 292px) and (max-width: 599.99px) {
-    body header nav .btnClose, body header nav .menu, body main article #intro .introImg, body main .conteiner #calc article #example, body main .conteiner #resultConteiner, body main .conteiner #resultConteiner #result {display: none}
+body header nav .btnClose, body header nav .menu, body main article #intro .introImg, body main .container #calc article #example, body main .container #resultContainer, body main .container #resultContainer #result {display: none}
     
-    body {background-color:var(--cl-lightest)}
+body {background-color:var(--cl-lightest)}
 
-    body header {
-        width: 100vw;
-        height: 18vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--cl-darkest);
-    }
+body header {
+    width: 100vw;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cl-darkest);
+}
 
-    body header div {
-        width: 50vw;
-        height: 10vh;
-        margin-left: 5vw;
-        background-color: var(--cl-lightest);
-    }
+body header div {
+    width: 60vw;
+    height: 7vh;
+    margin-left: 5vw;
+}
+
+body header div #logoHome {
+    width: 100%;
+    height: 100%;
+}
+
+body header nav .btnMenu {
+    height: 10vh;
+    margin-right: 1vw;
+    z-index: 99;
+}
+    
+body header nav .btnClose {
+    height: 10vh;
+    position: fixed;
+    top: 30px;
+    right: 0;
+    z-index: 99;
+}
+
+body header nav .menu {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    background-color: #31363fec;
+    backdrop-filter: blur(10px);
+}
+
+body header nav .menu li {
+    margin: 21vh 0 -12vh 0;
+    list-style: none;
+}
+
+body header nav .menu li a {
+    font-size: var(--fs-large);
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--cl-lightest);
+}
+
+body main .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body main .container #intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+body main .container #intro p {
+    width: 95vw;
+    font-size: var(--fs-medium);
+    margin: 5vw 0 7vw 0;
+    color: var(--cl-dark);
+}
+
+body main .container #resultContainer {
+    width: 100vw;
+    height: 295.5vh;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #eeeeeeb8;
+    backdrop-filter: blur(2px);
+}
+
+body main .container #resultContainer #result {
+    width: 80vw;
+    top: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    padding: 0 1vw;
+    margin-top: 10px;
+    background-color: var(--cl-dark);
+    z-index: 99;
+}
+
+body main .container #resultContainer #result a {
+    width: 90%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 4vw 0;
+}
+
+body main .container #resultContainer #result .newCalc {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--fs-small);
+    margin: 4vw 0;
+    color: var(--cl-dark);
+    background-color: var(--cl-light);
+}
+
+body main .container #resultContainer #result .newCalc img {width: 2.5vh}
+
+body main .container #resultContainer #result .valCalculated, body main .container #resultContainer #result .resultValues {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body main .container #resultContainer #result .valCalculated h2, body main .container #resultContainer #result .resultValues h2 {
+    font-size: var(--fs-medium);
+    margin-bottom: 4vw;
+    color: var(--cl-lightest);
+}
+
+body main .container #resultContainer #result .valCalculated div, body main .container #resultContainer #result .resultValues div {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: var(--fs-small);
+    padding: 0 1vw;
+    margin-bottom: 4vw;
+    color: var(--cl-dark);
+    background-color: var(--cl-lightest);
+}
+
+body main .container #resultContainer #result .valCalculated div p, body main .container #resultContainer #result .resultValues div p {max-width: 100%}
+
+body main .container #resultContainer #result .graphics {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body main .container #resultContainer #result .graphics h2 {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-medium);
+    margin-bottom: 4vw;
+    color: var(--cl-dark);
+    background-color: var(--cl-light);
+}
+
+body main .container #resultContainer #result .graphics div {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4vw;
+    background-color: var(--cl-lightest);
+}
+
+body main .container #calc {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--cl-dark);
+}
+
+body main .container #calc h1 {
+    text-align: center;
+    font-size: var(--fs-large);
+    font-weight: bold;
+    margin: 4vw 0 4vw 0;
+    color: var(--cl-lightest);
+}
+
+body main .container #calc article {
+    width: 90vw;
+    margin-bottom: 7vw;
+    background-color: var(--cl-lightest);
+}
+
+body main .container #calc article #calculator {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1vw;
+}
+
+body main .container #calc article #calculator div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-medium);
+    margin-bottom: 2vw;
+    color: var(--cl-dark);
+}
+
+body main .container #calc article #calculator div input, body main .container #calc article #calculator div select {
+    width: 100%;
+    height: 5vh;
+    font-size: var(--fs-small);
+    padding: 1vw;
+    border: 1px solid var(--cl-darkest);
+    border-radius: 0;
+    color: var(--cl-dark);
+    background-color: var(--cl-lightest);
+}
+
+body main .container #calc article #calculator div select {background-color: #FFF}
+
+body main .container #calc article #calculator .btnCompute {align-items: center}
+
+body main .container #calc article #calculator .btnCompute a {
+    width: 70%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 4vw 0 3vw 0;
+    border-radius: 50px;
+}
+
+body main .container #calc article #calculator .btnCompute a #compute {
+    width: 100%;
+    height: 8vh;
+    font-size: var(--fs-medium);
+    margin: 4vw 0 3vw 0;
+    border: 1px solid var(--cl-darkest);
+    border-radius: 50px;
+    color: var(--cl-dark);
+    background-color: var(--cl-light);
+}
+
+body main .container #about {
+    width: 95vw;
+    display: flex;
+    align-items: center;  
+    flex-direction: column;
+    text-align: center;
+    font-size: var(--fs-medium);
+    margin: 4vw 0 4vw 0;
+    color: var(--cl-dark);
+    background-color: var(--cl-lightest);
+}
+
+body main .container #about h2, body main .container #about p {
+    font-weight: bold;
+    margin-bottom: 4vw;
+}
+
+body main .container #about p {font-weight: lighter}
+
+body footer article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cl-darkest);
+}
+
+body footer article #logoFooter {
+    width: 60vw;
+    height: 8vh;
+    margin: 8vw 0 4vw 0;
+}
+
+body footer article .footerIcons {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+body footer article .footerIcons img {
+    height: 10vw;
+    margin-bottom: 4vw;
+}
+
+body footer article .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: var(--fs-smaller);
+    margin-bottom: 4vw;
+    color: var(--cl-lightest);
+}
+
+body footer article .copyright h3 {font-weight: normal}
+
+/* Tela Tablet */
+@media only screen and (min-width: 570px) and (max-width: 767.99px) {
+    body header div, body footer article #logoFooter {height: 10vh}
 
     body header nav .btnMenu {
         height: 12vh;
-        margin-right: 1vw;
-        z-index: 99;
+        margin-right: 3vw;
     }
-    
+        
     body header nav .btnClose {
         height: 15vh;
-        position: fixed;
-        top: 8px;
-        right: 0;
-        z-index: 99;
+        top: 10px;
+        right: 1vw;
     }
 
-    body header nav .menu {
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
-        text-align: center;
-        position: fixed;
-        background-color: #31363fec;
-        backdrop-filter: blur(10px);
-    }
-
-    body header nav .menu li {
-        margin: 21vh 0 -12vh 0;
-        list-style: none;
-    }
-
-    body header nav .menu li a {
-        font-size: var(--fs-large);
-        font-weight: bold;
-        text-decoration: none;
-        color: var(--cl-lightest);
-    }
-
-    body main .conteiner {
-        display: flex;
-        align-items: center;
+    body main .container #resultContainer #result .valCalculated div, body main .container #resultContainer #result .resultValues div {
+        height: 12vh;
         justify-content: center;
-        flex-direction: column;
     }
+    
+    body main .container #resultContainer #result .graphics h2, body main .container #calc article #calculator div input, body main .container #calc article #calculator div select {height: 7vh}
+    
+    body main .container #resultContainer #result .graphics div {height: 40vh}
 
-    body main .conteiner #intro {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    body main .conteiner #intro p {
-        width: 95vw;
-        font-size: var(--fs-medium);
-        margin: 5vw 0 7vw 0;
-        color: var(--cl-dark);
-    }
-
-    body main .conteiner #resultConteiner {
-        width: 100vw;
-        height: 295.5vh;
-        top: 0;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        background-color: #eeeeeeb8;
-        backdrop-filter: blur(2px);
-    }
-
-    body main .conteiner #resultConteiner #result {
-        width: 80vw;
-        top: 0;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
-        position: absolute;
-        padding: 0 1vw;
-        margin-top: 10px;
-        background-color: var(--cl-dark);
-        z-index: 99;
-    }
-
-    body main .conteiner #resultConteiner #result .newCalc {
-        width: 90%;
-        height: 8vh;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        font-size: var(--fs-small);
-        margin: 4vw 0;
-        color: var(--cl-dark);
-        background-color: var(--cl-light);
-    }
-
-    body main .conteiner #resultConteiner #result .newCalc img {width: 2.5vh}
-
-    body main .conteiner #resultConteiner #result .valCalculated, body main .conteiner #resultConteiner #result .resultValues {
-        width: 90%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    body main .conteiner #resultConteiner #result .valCalculated h2, body main .conteiner #resultConteiner #result .resultValues h2 {
-        font-size: var(--fs-medium);
-        margin-bottom: 4vw;
-        color: var(--cl-lightest);
-    }
-
-    body main .conteiner #resultConteiner #result .valCalculated div, body main .conteiner #resultConteiner #result .resultValues div {
-        width: 100%;
-        height: 8vh;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
-        font-size: var(--fs-small);
-        padding: 0 1vw;
-        margin-bottom: 4vw;
-        color: var(--cl-dark);
-        background-color: var(--cl-lightest);
-    }
-
-    body main .conteiner #resultConteiner #result .valCalculated div p, body main .conteiner #resultConteiner #result .resultValues div p {max-width: 100%}
-
-    body main .conteiner #resultConteiner #result .graphics {
-        width: 90%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    body main .conteiner #resultConteiner #result .graphics h2 {
-        width: 100%;
-        height: 5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: var(--fs-medium);
-        margin-bottom: 4vw;
-        color: var(--cl-dark);
-        background-color: var(--cl-light);
-    }
-
-    body main .conteiner #resultConteiner #result .graphics div {
-        width: 100%;
-        height: 30vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 4vw;
-        background-color: var(--cl-lightest);
-    }
-
-    body main .conteiner #calc {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: var(--cl-dark);
-    }
-
-    body main .conteiner #calc h1 {
-        text-align: center;
-        font-size: var(--fs-large);
-        font-weight: bold;
-        margin: 4vw 0 4vw 0;
-        color: var(--cl-lightest);
-    }
-
-    body main .conteiner #calc article {
-        width: 90vw;
-        margin-bottom: 7vw;
-        background-color: var(--cl-lightest);
-    }
-
-    body main .conteiner #calc article #calculator {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-        padding: 1vw;
-    }
-
-    body main .conteiner #calc article #calculator div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        font-size: var(--fs-medium);
-        margin-bottom: 2vw;
-        color: var(--cl-dark);
-    }
-
-    body main .conteiner #calc article #calculator div input, body main .conteiner #calc article #calculator div select {
-        width: 100%;
-        height: 5vh;
-        font-size: var(--fs-small);
-        padding: 1vw;
-        border: 1px solid var(--cl-darkest);
-        border-radius: 0;
-        color: var(--cl-dark);
-        background-color: var(--cl-lightest);
-    }
-
-    body main .conteiner #calc article #calculator div select {background-color: #FFF}
-
-    body main .conteiner #calc article #calculator .btnCompute {align-items: center}
-
-    body main .conteiner #calc article #calculator #compute {
-        width: 70%;
-        height: 8vh;
-        font-size: var(--fs-medium);
-        margin: 4vw 0 3vw 0;
-        border: 1px solid var(--cl-darkest);
-        border-radius: 50px;
-        color: var(--cl-dark);
-        background-color: var(--cl-light);
-    }
-
-    body main .conteiner #about {
-        width: 95vw;
-        display: flex;
-        align-items: center;  
-        flex-direction: column;
-        text-align: center;
-        font-size: var(--fs-medium);
-        margin: 4vw 0 4vw 0;
-        color: var(--cl-dark);
-        background-color: var(--cl-lightest);
-    }
-
-    body main .conteiner #about h2, body main .conteiner #about p {
-        font-weight: bold;
-        margin-bottom: 4vw;
-    }
-
-    body main .conteiner #about p {font-weight: lighter}
-
-    body footer article {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: var(--cl-darkest);
-    }
-
-    body footer article #logoFooter {
-        width: 60vw;
-        height: 10vh;
-        margin: 8vw 0 4vw 0;
-        background-color: var(--cl-lightest);
-    }
-
-    body footer article .footerIcons {
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    body footer article .footerIcons img {
-        height: 10vw;
-        margin-bottom: 4vw;
-    }
-
-    body footer article .copyright {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-size: var(--fs-smaller);
-        margin-bottom: 4vw;
-        color: var(--cl-lightest);
-    }
-
-    body footer article .copyright h3 {font-weight: normal}
-}
-
-/* Tela Tablet */
-@media only screen and (min-width: 570px) and (max-width: 1199.99px) {
-
+    body main .container #calc article #calculator .btnCompute a, body main .container #calc article #calculator .btnCompute a #compute {height: 12vh}
+    
+    body footer article .footerIcons img {height: 8vw}
+    
+    body footer article .copyright {font-size: 2.5vw}
 }
 
 /* Tela Desktop */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
+    body header nav .btnMenu, body header nav .btnClose, body main .container #resultContainer, body main .container #resultContainer #result {display: none}
 
+    body header {
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body header div {
+        width: 35%;
+        height: 6vh;
+        margin-left: 4vw;
+    }
+
+    body header nav {
+        width: 75%;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body header nav .menu {
+        width: 60%;
+        height: 100%;
+        top: unset;
+        left: unset;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        position: absolute;
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+
+    body header nav .menu li {margin: 0}
+
+    body header nav .menu li a, body main .container #calc h1, body main .container #about {font-size: 2rem} 
+
+    body header nav .menu li a:hover {
+        color: var(--cl-light);
+        transition: 0.3s;
+    }
+
+    body main .container #intro {
+        width: 100vw;
+        height: 40vh;
+        justify-content: space-around;
+    }
+
+    body main .container #intro p {
+        width: 50%;
+        font-size: 1.7rem;
+    }
+
+    body main .container #intro .introImg {
+        width: 40%;
+        height: 65%;
+        display: inline;
+        margin-right: 3vw;
+    }
+
+    body main .container #resultContainer {max-height: 1666px}
+
+    body main .container #resultContainer #result {width: 97.5vw}
+
+    body main .container #resultContainer #result a, body main .container #resultContainer #result .valCalculated, body main .container #resultContainer #result .resultValues, body main .container #resultContainer #result .graphics {width: 96%}
+
+    body main .container #resultContainer #result .newCalc, body main .container #resultContainer #result .graphics h2 {
+        height: 12vh;
+        font-size: var(--fs-medium);
+    }
+
+    body main .container #resultContainer #result .newCalc img {width: 5vh}
+
+    body main .container #resultContainer #result .valCalculated, body main .container #resultContainer #result .resultValues, body main .container #resultContainer #result .graphics {
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    body main .container #resultContainer #result .resultValues h2 {width: 100%}
+
+    body main .container #resultContainer #result .valCalculated div, body main .container #resultContainer #result .resultValues div {
+        width: 46%;
+        height: 10vh;
+        font-size: var(--fs-smaller);
+    }
+
+    body main .container #resultContainer #result .resultValues div {
+        width: 32%;
+        font-size: 2.8vw;
+    }
+
+    body main .container #resultContainer #result .graphics div {
+        width: 45%;
+        height: 50vh;
+    }
+
+    body main .container #calc article {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+
+    body main .container #calc article #calculator {
+        width: 75%;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-right: 1px solid #000;
+    }
+
+    body main .container #calc article #calculator div {
+        width: 50%;
+        font-size: 2.2vw;
+    }
+
+    body main .container #calc article #calculator div input, body main .container #calc article #calculator div select, body main .container #calc article #calculator div>div {
+        width: 95%;
+        height: 7vh;
+        font-size: var(--fs-smaller);
+    }
+
+    body main .container #calc article #calculator div>div {width: 100%}
+
+    body main .container #calc article #calculator div select, body main .container #calc article #calculator div select option {cursor: pointer}
+
+    body main .container #calc article #calculator .typOfInvestment {margin-top: 3vw}
+
+    body main .container #calc article #calculator .btnCompute a {
+        width: 75%;
+        height: 12vh;
+        margin-top: 3.5vw;
+    }
+
+    body main .container #calc article #calculator .btnCompute a #compute {
+        height: 12vh;
+        font-weight: bold;
+        font-size: var(--fs-smaller);
+        margin-top: 3.5vw;
+        cursor: pointer;
+    }
+
+    body main .container #calc article #calculator .btnCompute a:hover, body main .container #calc article #calculator .btnCompute a #compute:hover {
+        color: var(--cl-lightest);
+        transition: 0.3s;
+    }
+
+    body main .container #calc article #example {
+        width: 40%;
+        height: 100%;
+        display: inline;
+        font-size: 2.18vw;
+        margin: 1.5vw;
+    }
+
+    body main .container #about p {font-size: 1.7rem}
+
+    body footer article {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    body footer article #logoFooter {
+        width: 30vw;
+        height: 7vh;
+        order: 1;
+        margin: 5vw 0 4.5vw 5vw;
+    }
+
+    body footer article .footerIcons {order: 3}
+
+    body footer article .footerIcons img {
+        height: 5vw;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    body footer article .footerIcons img:hover {
+        transition: 0.3s;
+        transform: scale(1.2);
+    }
+
+    body footer article .copyright {
+        width: 70vw;
+        order: 2;
+        font-size: 1.2vw;
+        margin: 0 -5vw 0 3vw;
+    }    
+}
+
+/* Tela Desktop Largo */
+@media only screen and (min-width: 1200px) {
+    
 }

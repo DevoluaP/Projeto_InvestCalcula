@@ -7,13 +7,12 @@
         <meta property="og:description" content="Calculadora de Juros Compostos">
         <title>InvestCalcula</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="#">
-        <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="imagens/logo-icon.png">
     </head>
     <body>
         <header>   
             <div>
-                <img id="logoHome" src="#" alt="Logomarca InvestCalcula" title="InvestCalcula">
+                <img id="logoHome" src="imagens/logo.jpg" alt="Logomarca InvestCalcula" title="InvestCalcula">
             </div>
             <nav>
                 <img class="btnMenu" src="imagens/btn-menu.svg" alt="Botão para abrir o menu" title="Abrir menu">
@@ -25,26 +24,26 @@
             </nav>
         </header>
         <main>
-            <article class="conteiner">
+            <article class="container">
                 <section id="intro">
                     <p>Use da nossa calculadora de juros compostos para tomar decisões financeiras melhores e simular potenciais retornos para você.</p>
                     <img class="introImg" src="imagens/intro-image.jpg" alt="Uma pessoa fazendo cálculos no caderno" title="Faça seu cálculo também">
                 </section>
-                <section id="resultConteiner">
+                <section id="resultContainer">
                     <div id="result">
-                        <div class="newCalc">
+                        <a href="#calc"><div class="newCalc">
                             <img src="imagens/arrow-left.svg" alt="Seta para esquerda">
                             <p>Fazer outro cálculo</p>
-                        </div>
+                        </div></a>
                         <div class="valCalculated">
                             <h2>Valores calculados</h2>
                             <div>
                                 <p>Valor Inicial:</p>
-                                <p class="resultValInit">R$ 00,0</p>
+                                <p class="resultValInit">R$ 0,00</p>
                             </div>
                             <div>
                                 <p>Valor Mensal:</p>
-                                <p class="resultValMont">R$ 00,0</p>
+                                <p class="resultValMont">R$ 0,00</p>
                             </div>
                             <div>
                                 <p>Período de:</p>
@@ -59,15 +58,15 @@
                             <h2>Resultado:</h2>
                             <div>
                                 <p>Valor total:</p>
-                                <p class="resultValTotal">R$ 00,0</p>
+                                <p class="resultValTotal">R$ 0,00</p>
                             </div>
                             <div>
-                                <p>Valor total Investido:</p>
-                                <p class="resultValTotalInvest">R$ 00,0</p>
+                                <p>Valor Investido:</p>
+                                <p class="resultValTotalInvest">R$ 0,00</p>
                             </div>
                             <div>
                                 <p>Valor em Juros:</p>
-                                <p class="resultValRate">R$ 00,0</p>
+                                <p class="resultValRate">R$ 0,00</p>
                             </div>
                         </div>
                         <div class="graphics">
@@ -87,17 +86,17 @@
                         <section id="calculator">
                             <div>
                                 <label>Aporte Inicial</label>
-                                <input type="number" name="initialContribution" id="initCon" min="0" placeholder="R$ 00,0">
+                                <input type="number" name="initialContribution" id="initCon" step="0.01" min="0" placeholder="R$ 0,00">
                             </div>
                             <div>
                                 <label>Aporte Mensal</label>
-                                <input type="number" name="monthlyContribution" id="montCon" min="0" placeholder="R$ 00,0">
+                                <input type="number" name="monthlyContribution" id="montCon" step="0.01" min="0" placeholder="R$ 0,00">
                             </div>
                             <div>
                                 <label>Tempo de Rendimento</label>
                                 <div>
-                                    <input type="number" name="yieldTime" id="yldTime" min="0" placeholder="00" required>
-                                    <select name="yieldTime" id="yldTimeValue">
+                                    <input type="number" name="yieldTime" id="yldTime" min="1" placeholder="00" required>
+                                    <select name="yieldTime" id="yldTimeValue" required>
                                         <option value="years" selected>Anos</option>
                                         <option value="months">Meses</option>
                                     </select>
@@ -106,32 +105,32 @@
                             <div>
                                 <label>Taxa de Juros</label>
                                 <div>
-                                    <input type="number" name="interestRate" id="intRate" min="0" placeholder="00,0%" required>
-                                    <select name="interestRate" id="intRateValue">
+                                    <input type="number" name="interestRate" id="intRate" step="0.01" min="0.01" placeholder="00,0%" required>
+                                    <select name="interestRate" id="intRateValue" required>
                                         <option value="yearly" selected>Anual</option>
                                         <option value="monthly">Mensal</option>
                                     </select>
                                 </div>
                             </div>
-                            <div>
+                            <div class="typOfInvestment">
                                 <label>Tipo de Investimento</label>
-                                <select name="typeOfInvestment" id="typOfInvest">
+                                <select name="typeOfInvestment" id="typOfInvest" required>
                                     <option value="fixedIncome" selected>Renda Fixa</option>
                                     <option value="variableIncome">Renda Variável</option>
                                 </select>
                             </div>
                             <div class="btnCompute">
-                                <input id="compute" type="submit" name="calculate" value="Calcular">
+                                <a href="#resultContainer"><input id="compute" type="submit" name="calculate" value="Calcular"></a>
                             </div>
                         </section>
                         <section id="example">
                             <h3>Exemplo (Renda Fixa)</h3>
                             <p>Em 5 anos investindo R$ 200,00 por mês (sem valor inicial) com a taxa de juros de 10% ao ano, você teria o valor total acumulado de:</p>
-                            <p>R$ 15,312.25</p>
+                            <p>R$ 15.312,25</p>
                             <p>o total em juros de:</p>
-                            <p>R$ 3,312.25</p>
+                            <p>R$ 3.312,25</p>
                             <p>e o total investido de:</p>
-                            <p>R$ 12,000.00</p>
+                            <p>R$ 12.000,00</p>
                         </section>
                     </article>
                 </section>
@@ -143,7 +142,7 @@
         </main>
         <footer>
             <article>
-                <img id="logoFooter" src="#" alt="Logomarca InvestCalcula" title="InvestCalcula">
+                <img id="logoFooter" src="imagens/logo.jpg" alt="Logomarca InvestCalcula" title="InvestCalcula">
                 <div class="footerIcons">
                     <img src="imagens/email-icon.svg" alt="Nosso Email para contato." title="Nosso Email">
                     <img src="imagens/telephone-icon.svg" alt="Nosso telefone para contato." title="Nosso telefone">
