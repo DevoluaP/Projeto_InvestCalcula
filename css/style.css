@@ -19,7 +19,7 @@
 }
 
 /* Tela indisponivel */
-@media only screen and (max-width: 240px) {body{display: none}}
+@media only screen and (max-width: 290px) {body{display: none}}
 
 /* Tela Mobile */
 body header nav .btnClose, body header nav .menu, body main article #intro .introImg, body main .container #calc article #example, body main .container #resultContainer, body main .container #resultContainer #result {display: none}
@@ -109,26 +109,30 @@ body main .container #intro p {
 
 body main .container #resultContainer {
     width: 100vw;
-    height: 295.5vh;
+    height: 100vh;
     top: 0;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     background-color: #eeeeeeb8;
     backdrop-filter: blur(2px);
+    z-index: 99;
 }
 
 body main .container #resultContainer #result {
     width: 80vw;
+    height: 100vh;
     top: 0;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     position: absolute;
+    overflow: hidden;
+    overflow-y: scroll;
     padding: 0 1vw;
     margin-top: 10px;
     background-color: var(--cl-dark);
-    z-index: 99;
+    z-index: 999;
 }
 
 body main .container #resultContainer #result a {
@@ -212,8 +216,15 @@ body main .container #resultContainer #result .graphics div {
     align-items: center;
     justify-content: center;
     margin-bottom: 4vw;
-    background-color: var(--cl-lightest);
 }
+
+body main .container #resultContainer #result .graphics div #columnChart {
+    width: 100%;
+    height: 100%;
+    margin: 8vw 0 4vw 0;
+}
+
+body main .container #resultContainer #result .graphics div #pieChart {background-color: var(--cl-lightest)}
 
 body main .container #calc {
     width: 100%;
@@ -277,7 +288,7 @@ body main .container #calc article #calculator .btnCompute a {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin: 4vw 0 3vw 0;
+    margin: 2.5vw 0 3vw 0;
     border-radius: 50px;
 }
 
@@ -285,7 +296,7 @@ body main .container #calc article #calculator .btnCompute a #compute {
     width: 100%;
     height: 8vh;
     font-size: var(--fs-medium);
-    margin: 4vw 0 3vw 0;
+    margin: 2.5vw 0 3vw 0;
     border: 1px solid var(--cl-darkest);
     border-radius: 50px;
     color: var(--cl-dark);
@@ -379,7 +390,7 @@ body footer article .copyright h3 {font-weight: normal}
     body footer article .copyright {font-size: 2.5vw}
 }
 
-/* Tela Desktop */
+/* Tela Desktop - Menor */
 @media only screen and (min-width: 768px) {
     body header nav .btnMenu, body header nav .btnClose, body main .container #resultContainer, body main .container #resultContainer #result {display: none}
 
@@ -445,15 +456,15 @@ body footer article .copyright h3 {font-weight: normal}
         margin-right: 3vw;
     }
 
-    body main .container #resultContainer {max-height: 1666px}
+    body main .container #resultContainer {min-height: 6px}
 
-    body main .container #resultContainer #result {width: 97.5vw}
+    body main .container #resultContainer #result {width: 90vw}
 
     body main .container #resultContainer #result a, body main .container #resultContainer #result .valCalculated, body main .container #resultContainer #result .resultValues, body main .container #resultContainer #result .graphics {width: 96%}
 
     body main .container #resultContainer #result .newCalc, body main .container #resultContainer #result .graphics h2 {
         height: 12vh;
-        font-size: var(--fs-medium);
+        font-size: 6vw;
     }
 
     body main .container #resultContainer #result .newCalc img {width: 5vh}
@@ -464,22 +475,24 @@ body footer article .copyright h3 {font-weight: normal}
         flex-wrap: wrap;
     }
 
+    body main .container #resultContainer #result .valCalculated h2 {margin-top: 2vw}
+
     body main .container #resultContainer #result .resultValues h2 {width: 100%}
 
-    body main .container #resultContainer #result .valCalculated div, body main .container #resultContainer #result .resultValues div {
+    body main .container #resultContainer #result .resultValues div, body main .container #resultContainer #result .valCalculated div {
         width: 46%;
-        height: 10vh;
+        height: 12vh;
         font-size: var(--fs-smaller);
     }
 
     body main .container #resultContainer #result .resultValues div {
         width: 32%;
-        font-size: 2.8vw;
+        font-size: 2.6vw;
     }
 
     body main .container #resultContainer #result .graphics div {
         width: 45%;
-        height: 50vh;
+        height: 30vh;
     }
 
     body main .container #calc article {
@@ -511,19 +524,20 @@ body footer article .copyright h3 {font-weight: normal}
 
     body main .container #calc article #calculator div select, body main .container #calc article #calculator div select option {cursor: pointer}
 
-    body main .container #calc article #calculator .typOfInvestment {margin-top: 3vw}
-
     body main .container #calc article #calculator .btnCompute a {
-        width: 75%;
-        height: 12vh;
+        width: 97%;
+        height: 10vh;
         margin-top: 3.5vw;
+        border-radius: 100px;
     }
 
     body main .container #calc article #calculator .btnCompute a #compute {
-        height: 12vh;
+        width: 97%;
+        height: 10vh;
         font-weight: bold;
         font-size: var(--fs-smaller);
         margin-top: 3.5vw;
+        border-radius: 50px;
         cursor: pointer;
     }
 
@@ -575,7 +589,66 @@ body footer article .copyright h3 {font-weight: normal}
     }    
 }
 
-/* Tela Desktop Largo */
-@media only screen and (min-width: 1200px) {
-    
+/* Tela Desktop - Largo */
+@media only screen and (min-width: 1300px) {
+    body {overflow-x: hidden}
+
+    body header div {width: 25%}
+
+    body main .container #intro {
+        height: 50vh;
+        align-items: center;
+    }
+
+    body main .container #intro p {
+        width: 35%;
+        font-size: 2.2rem;
+        margin: 0;
+    }
+
+    body main .container #intro .introImg {
+        width: 40%;
+        height: 80%;
+        margin: 0;
+    }
+
+    body main .container #resultContainer #result {width: 70vw}
+
+    body main .container #resultContainer #result a, body main .container #resultContainer #result .valCalculated, body main .container #resultContainer #result .resultValues, body main .container #resultContainer #result .graphics {width: 95%}
+
+    body main .container #resultContainer #result .newCalc, body main .container #resultContainer #result .valCalculated h2, body main .container #resultContainer #result .resultValues h2, body main .container #resultContainer #result .graphics h2 {font-size: var(--fs-small)}
+
+    body main .container #resultContainer #result .valCalculated h2 {margin-top: 1vw}
+
+    body main .container #resultContainer #result .resultValues div, body main .container #resultContainer #result .valCalculated div {
+        width: 48%;
+        height: 16vh;
+    }
+
+    body main .container #resultContainer #result .resultValues div {
+        width: 32%;
+        font-size: 1.9vw;
+    }
+
+    body main .container #resultContainer #result .graphics div {
+        width: 48%;
+        height: 40vh;
+    }
+
+    body main .container #calc h1, body main .container #about h2 {font-size: var(--fs-smaller)}
+
+    body main .container #calc article #calculator div input, body main .container #calc article #calculator div select, body main .container #calc article #calculator div>div {height: 10vh}
+
+    body main .container #calc article #calculator .btnCompute a, body main .container #calc article #calculator .btnCompute a #compute {
+        width: 100%;
+        height: 12vh;
+    }
+
+    body main .container #calc article #example {margin-bottom: 0}
+
+    body main .container #about p {font-size: 2.2rem}
+
+    body footer article .footerIcons img {height: 7vh}
+
+    body footer article .copyright {font-size: 1rem}
 }

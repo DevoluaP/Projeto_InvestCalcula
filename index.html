@@ -75,7 +75,7 @@
                                 <div id="columnChart"></div>
                             </div>
                             <div>
-                                <div id="pieChart"></div>
+                                <canvas id="pieChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -112,19 +112,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="typOfInvestment">
-                                <label>Tipo de Investimento</label>
-                                <select name="typeOfInvestment" id="typOfInvest" required>
-                                    <option value="fixedIncome" selected>Renda Fixa</option>
-                                    <option value="variableIncome">Renda Variável</option>
-                                </select>
-                            </div>
                             <div class="btnCompute">
                                 <a href="#resultContainer"><input id="compute" type="submit" name="calculate" value="Calcular"></a>
                             </div>
                         </section>
                         <section id="example">
-                            <h3>Exemplo (Renda Fixa)</h3>
+                            <h3>Exemplo</h3>
                             <p>Em 5 anos investindo R$ 200,00 por mês (sem valor inicial) com a taxa de juros de 10% ao ano, você teria o valor total acumulado de:</p>
                             <p>R$ 15.312,25</p>
                             <p>o total em juros de:</p>
@@ -144,8 +137,8 @@
             <article>
                 <img id="logoFooter" src="imagens/logo.jpg" alt="Logomarca InvestCalcula" title="InvestCalcula">
                 <div class="footerIcons">
-                    <img src="imagens/email-icon.svg" alt="Nosso Email para contato." title="Nosso Email">
-                    <img src="imagens/telephone-icon.svg" alt="Nosso telefone para contato." title="Nosso telefone">
+                    <a href="mailto:investcalcula@gmail.com" target="_blank" rel="noopener noreferrer"><img src="imagens/email-icon.svg" alt="Nosso Email para contato." title="Nosso Email"></a>
+                    <a href="https://wa.me/11912345678" target="_blank" rel="noopener noreferrer"><img src="imagens/telephone-icon.svg" alt="Nosso telefone para contato." title="Nosso telefone"></a>
                 </div>
                 <div class="copyright">
                     <h3>Copyright © 2024 InvestCalcula</h3>
