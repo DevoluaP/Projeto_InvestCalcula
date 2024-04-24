@@ -23,7 +23,6 @@ document.querySelector('.btnClose').addEventListener('click', function () {
     document.querySelector('.btnMenu').style.display = 'inline';
 });
 
-
 // Calculadora
 function calculateCompoundInterest () {
     let compInt, totalCompInt, invest, totalInvest, valTotal, calendar, per;
@@ -110,94 +109,18 @@ function calculateCompoundInterest () {
         document.querySelector('.resultValTotal').innerHTML = Number(valTotal).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     }
 
-    let loopYear = 1;
-    for (let i = 0; i < yldTime-1; i++){loopYear += i}
-
-    let loopMonth;
-    for (let i = 0; i < yldTime-1; i++) {
-        loopMonth = "Janeiro";
-        loopMonth = "Fevereiro";
-        loopMonth = "Março";
-        loopMonth = "Abril";
-        loopMonth = "Maio";
-        loopMonth = "Junho";
-        loopMonth = "Julho";
-        loopMonth = "Agosto";
-        loopMonth = "Setembro";
-        loopMonth = "Outubro";
-        loopMonth = "Novembro";
-        loopMonth = "Dezembro";
-    }
-
-    // Gráficos de colunas (barra vertical)
-    if (yldTimeValue == years) {
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart () {
-            let data = google.visualization.arrayToDataTable([
-                ['Ano', 'Valor Inicial', 'Valor Investido', 'Valor em Juros'],
-                [loopYear, initCon, montCon*12, totalCompInt]
-            ]);
-            let options = {
-                bars: 'vertical',
-                vAxis: {format: 'short'},
-                width: 325,
-                height: 230,
-                colors: ['#B3A978', '#76ABAE', '#222831']
-            };
-            let chart = new google.charts.Bar(document.getElementById('columnChart'));
-            chart.draw(data, google.charts.Bar.convertOptions(options));
-        }
-    } else if (yldTimeValue == months) {
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart () {
-            let data = google.visualization.arrayToDataTable([
-                ['Mês', 'Valor Inicial', 'Valor Investido', 'Juros Compostos'],
-                // Criar um loop de repetição utilizando o resultado do tempo de rendimento
-                ['Janeiro', initCon, montCon, compInt],   
-                ['Fevereiro', initCon, montCon, compInt],
-                ['Março', initCon, montCon, compInt],
-                ['Abril', initCon, montCon, compInt],
-                ['Maio', initCon, montCon, compInt],
-                ['Junho', initCon, montCon, compInt],
-                ['Julho', initCon, montCon, compInt],
-                ['Agosto', initCon, montCon, compInt],
-                ['Setembro', initCon, montCon, compInt],
-                ['Outubro', initCon, montCon, compInt],
-                ['Novembro', initCon, montCon, compInt],
-                ['Dezembro', initCon, montCon, compInt]
-            ]);
-            let options = {
-                bars: 'vertical',
-                vAxis: {format: 'short'},
-                width: 325,
-                height: 230,
-                colors: ['#B3A978', '#76ABAE', '#222831']
-            };
-            let chart = new google.charts.Bar(document.getElementById('columnChart'));
-            chart.draw(data, google.charts.Bar.convertOptions(options));
-        }
-    }
-
-    // Gráfico de setores (redondo)
+    // Gráfico
     new Chart (pieChart, {
         type: 'pie',
         data: {
-            labels: [
-                'Valor Inicial',
-                'Valor em Juros',
-                'Valor Investido'
-            ],
+            labels: ['Valor Inicial', 'Valor em Juros', 'Valor Investido'],
             datasets: [{
                 data: [initCon, totalCompInt.toFixed(2), totalInvest.toFixed(2)-initCon],
-                backgroundColor: [
-                    '#B3A978',
-                    '#76ABAE',
-                    '#222831'
-                ],
+                backgroundColor: ['#B3A978', '#76ABAE', '#222831']
             }]
         },
+        options: {plugins: {legend: {labels: {font: {size: 17}}}}
+        }
     });
 }
 

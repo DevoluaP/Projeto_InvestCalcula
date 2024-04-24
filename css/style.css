@@ -216,15 +216,8 @@ body main .container #resultContainer #result .graphics div {
     align-items: center;
     justify-content: center;
     margin-bottom: 4vw;
+    background-color: var(--cl-lightest)
 }
-
-body main .container #resultContainer #result .graphics div #columnChart {
-    width: 100%;
-    height: 100%;
-    margin: 8vw 0 4vw 0;
-}
-
-body main .container #resultContainer #result .graphics div #pieChart {background-color: var(--cl-lightest)}
 
 body main .container #calc {
     width: 100%;
@@ -491,8 +484,8 @@ body footer article .copyright h3 {font-weight: normal}
     }
 
     body main .container #resultContainer #result .graphics div {
-        width: 45%;
-        height: 30vh;
+        width: 100%;
+        height: 40vh;
     }
 
     body main .container #calc article {
@@ -631,8 +624,8 @@ body footer article .copyright h3 {font-weight: normal}
     }
 
     body main .container #resultContainer #result .graphics div {
-        width: 48%;
-        height: 40vh;
+        width: 100%;
+        height: 50vh;
     }
 
     body main .container #calc h1, body main .container #about h2 {font-size: var(--fs-smaller)}
