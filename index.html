@@ -1,152 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="InvestCalcula">
-        <meta property="og:description" content="Calculadora de Juros Compostos">
-        <meta property="og:image" content="https://devoluap.github.io/InvestCalcula/imagens/logo-icon.png">
-        <title>InvestCalcula</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="imagens/logo-icon.png">
-    </head>
-    <body>
-        <header>   
-            <div>
-                <img id="logoHome" src="imagens/logo.jpg" alt="Logomarca InvestCalcula" title="InvestCalcula">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="InvestCalcula" />
+    <meta property="og:description" content="Calculadora de Juros Compostos" />
+    <meta
+      property="og:image"
+      content="https://devoluap.github.io/InvestCalcula/imagens/logo-icon.png"
+    />
+    <title>InvestCalcula</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="imagens/logo-icon.png"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img
+          id="logoHome"
+          src="imagens/logo.jpg"
+          alt="Logomarca InvestCalcula"
+          title="InvestCalcula"
+        />
+      </div>
+      <nav>
+        <img
+          class="btnMenu"
+          src="imagens/btn-menu.svg"
+          alt="Botão para abrir o menu"
+          title="Abrir menu"
+        />
+        <img
+          class="btnClose"
+          src="imagens/btn-close.svg"
+          alt="Botão para fechar o menu"
+          title="Fechar menu"
+        />
+        <ul class="menu">
+          <li><a href="#about" class="navMenuAbout">SOBRE</a></li>
+          <li><a href="#calc" class="navMenuCalc">CALCULADORA</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article class="container">
+        <section id="intro">
+          <p>
+            Use da nossa calculadora de juros compostos para tomar decisões
+            financeiras melhores.
+          </p>
+          <img
+            class="introImg"
+            src="imagens/intro-image.jpg"
+            alt="Uma pessoa fazendo cálculos no caderno"
+            title="Faça seu cálculo também"
+          />
+        </section>
+        <section id="resultContainer">
+          <div id="result">
+            <a href="#calc"
+              ><div class="newCalc">
+                <img src="imagens/arrow-left.svg" alt="Seta para esquerda" />
+                <p>Fazer outro cálculo</p>
+              </div></a
+            >
+            <div class="valCalculated">
+              <h2>Valores calculados</h2>
+              <div>
+                <p>Valor Inicial:</p>
+                <p class="resultValInit">R$ 0,00</p>
+              </div>
+              <div>
+                <p>Valor Mensal:</p>
+                <p class="resultValMont">R$ 0,00</p>
+              </div>
+              <div>
+                <p>Período de:</p>
+                <p class="resultValYldTime">00</p>
+              </div>
+              <div>
+                <p>Taxa de Juros:</p>
+                <p class="resultValIntRate">00,0%</p>
+              </div>
             </div>
-            <nav>
-                <img class="btnMenu" src="imagens/btn-menu.svg" alt="Botão para abrir o menu" title="Abrir menu">
-                <img class="btnClose" src="imagens/btn-close.svg" alt="Botão para fechar o menu" title="Fechar menu">
-                <ul class="menu">
-                    <li><a href="#about" class="navMenuAbout">SOBRE</a></li>
-                    <li><a href="#calc" class="navMenuCalc">CALCULADORA</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <article class="container">
-                <section id="intro">
-                    <p>Use da nossa calculadora de juros compostos para tomar decisões financeiras melhores e simular potenciais retornos para você.</p>
-                    <img class="introImg" src="imagens/intro-image.jpg" alt="Uma pessoa fazendo cálculos no caderno" title="Faça seu cálculo também">
-                </section>
-                <section id="resultContainer">
-                    <div id="result">
-                        <a href="#calc"><div class="newCalc">
-                            <img src="imagens/arrow-left.svg" alt="Seta para esquerda">
-                            <p>Fazer outro cálculo</p>
-                        </div></a>
-                        <div class="valCalculated">
-                            <h2>Valores calculados</h2>
-                            <div>
-                                <p>Valor Inicial:</p>
-                                <p class="resultValInit">R$ 0,00</p>
-                            </div>
-                            <div>
-                                <p>Valor Mensal:</p>
-                                <p class="resultValMont">R$ 0,00</p>
-                            </div>
-                            <div>
-                                <p>Período de:</p>
-                                <p class="resultValYldTime">00</p>
-                            </div>
-                            <div>
-                                <p>Taxa de Juros:</p>
-                                <p class="resultValIntRate">00,0%</p>
-                            </div>
-                        </div>
-                        <div class="resultValues">
-                            <h2>Resultado:</h2>
-                            <div>
-                                <p>Valor total:</p>
-                                <p class="resultValTotal">R$ 0,00</p>
-                            </div>
-                            <div>
-                                <p>Valor Investido:</p>
-                                <p class="resultValTotalInvest">R$ 0,00</p>
-                            </div>
-                            <div>
-                                <p>Valor em Juros:</p>
-                                <p class="resultValRate">R$ 0,00</p>
-                            </div>
-                        </div>
-                        <div class="graphics">
-                            <h2>Gráfico</h2>
-                            <div>
-                                <canvas id="pieChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="calc">
-                    <h1>Calculadora de Juros Compostos</h1>
-                    <article>
-                        <section id="calculator">
-                            <div>
-                                <label>Aporte Inicial</label>
-                                <input type="number" name="initialContribution" id="initCon" step="0.01" min="0" placeholder="R$ 0,00">
-                            </div>
-                            <div>
-                                <label>Aporte Mensal</label>
-                                <input type="number" name="monthlyContribution" id="montCon" step="0.01" min="0" placeholder="R$ 0,00">
-                            </div>
-                            <div>
-                                <label>Tempo de Rendimento</label>
-                                <div>
-                                    <input type="number" name="yieldTime" id="yldTime" min="1" placeholder="00" required>
-                                    <select name="yieldTime" id="yldTimeValue" required>
-                                        <option value="years" selected>Anos</option>
-                                        <option value="months">Meses</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label>Taxa de Juros</label>
-                                <div>
-                                    <input type="number" name="interestRate" id="intRate" step="0.01" min="0.01" placeholder="00,0%" required>
-                                    <select name="interestRate" id="intRateValue" required>
-                                        <option value="yearly" selected>Anual</option>
-                                        <option value="monthly">Mensal</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="btnCompute">
-                                <a href="#resultContainer"><input id="compute" type="submit" name="calculate" value="Calcular"></a>
-                            </div>
-                        </section>
-                        <section id="example">
-                            <h3>Exemplo</h3>
-                            <p>Em 5 anos investindo R$ 200,00 por mês (sem valor inicial) com a taxa de juros de 10% ao ano, você teria o valor total acumulado de:</p>
-                            <p>R$ 15.312,25</p>
-                            <p>o total em juros de:</p>
-                            <p>R$ 3.312,25</p>
-                            <p>e o total investido de:</p>
-                            <p>R$ 12.000,00</p>
-                        </section>
-                    </article>
-                </section>
-                <section id="about">
-                    <h2>Sobre</h2>
-                    <p>Aqui te oferecemos uma maneira fácil e intuitiva de gerenciar seus lucros futuros totalmente gratuita.</p>
-                </section>
-            </article>
-        </main>
-        <footer>
-            <article>
-                <img id="logoFooter" src="imagens/logo.jpg" alt="Logomarca InvestCalcula" title="InvestCalcula">
-                <div class="footerIcons">
-                    <a href="mailto:investcalcula@gmail.com" target="_blank" rel="noopener noreferrer"><img src="imagens/email-icon.svg" alt="Nosso Email para contato." title="Nosso Email"></a>
-                    <a href="https://wa.me/11912345678" target="_blank" rel="noopener noreferrer"><img src="imagens/telephone-icon.svg" alt="Nosso telefone para contato." title="Nosso telefone"></a>
+            <div class="resultValues">
+              <h2>Resultado:</h2>
+              <div>
+                <p>Valor total:</p>
+                <p class="resultValTotal">R$ 0,00</p>
+              </div>
+              <div>
+                <p>Valor Investido:</p>
+                <p class="resultValTotalInvest">R$ 0,00</p>
+              </div>
+              <div>
+                <p>Valor em Juros:</p>
+                <p class="resultValRate">R$ 0,00</p>
+              </div>
+            </div>
+            <div class="graphics">
+              <h2>Gráfico</h2>
+              <div>
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="calc">
+          <h1>Calculadora de Juros Compostos</h1>
+          <article>
+            <section id="calculator">
+              <div>
+                <label>Aporte Inicial</label>
+                <input
+                  type="number"
+                  name="initialContribution"
+                  id="initCon"
+                  step="0.01"
+                  min="0"
+                  placeholder="R$ 0,00"
+                />
+              </div>
+              <div>
+                <label>Aporte Mensal</label>
+                <input
+                  type="number"
+                  name="monthlyContribution"
+                  id="montCon"
+                  step="0.01"
+                  min="0"
+                  placeholder="R$ 0,00"
+                />
+              </div>
+              <div>
+                <label>Tempo de Rendimento</label>
+                <div>
+                  <input
+                    type="number"
+                    name="yieldTime"
+                    id="yldTime"
+                    min="1"
+                    placeholder="00"
+                    required
+                  />
+                  <select name="yieldTime" id="yldTimeValue" required>
+                    <option value="years" selected>Anos</option>
+                    <option value="months">Meses</option>
+                  </select>
                 </div>
-                <div class="copyright">
-                    <h3>Copyright © 2024 InvestCalcula</h3>
-                    <p>Todos os Direitos Reservados.</p>
+              </div>
+              <div>
+                <label>Taxa de Juros</label>
+                <div>
+                  <input
+                    type="number"
+                    name="interestRate"
+                    id="intRate"
+                    step="0.01"
+                    min="0.01"
+                    placeholder="00,0%"
+                    required
+                  />
+                  <select name="interestRate" id="intRateValue" required>
+                    <option value="yearly" selected>Anual</option>
+                    <option value="monthly">Mensal</option>
+                  </select>
                 </div>
-            </article>
-        </footer>
+              </div>
+              <div class="btnCompute">
+                <a href="#resultContainer"
+                  ><input
+                    id="compute"
+                    type="submit"
+                    name="calculate"
+                    value="Calcular"
+                /></a>
+              </div>
+            </section>
+            <section id="example">
+              <h3>Exemplo</h3>
+              <p>
+                Em 5 anos investindo R$ 200,00 por mês (sem valor inicial) com a
+                taxa de juros de 10% ao ano, você teria o valor total acumulado
+                de:
+              </p>
+              <p>R$ 15.312,25</p>
+              <p>o total em juros de:</p>
+              <p>R$ 3.312,25</p>
+              <p>e o total investido de:</p>
+              <p>R$ 12.000,00</p>
+            </section>
+          </article>
+        </section>
+        <section id="about">
+          <h2>Sobre</h2>
+          <p>
+            Aqui te oferecemos uma maneira fácil e intuitiva de gerenciar seus
+            lucros futuros totalmente gratuita.
+          </p>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <article>
+        <img
+          id="logoFooter"
+          src="imagens/logo.jpg"
+          alt="Logomarca InvestCalcula"
+          title="InvestCalcula"
+        />
+        <div class="footerIcons">
+          <a href="" rel="noopener noreferrer">
+            <img
+              src="imagens/email-icon.svg"
+              alt="Nosso Email para contato."
+              title="Nosso Email"
+            />
+          </a>
+          <a href="" rel="noopener noreferrer">
+            <img
+              src="imagens/telephone-icon.svg"
+              alt="Nosso telefone para contato."
+              title="Nosso telefone"
+            />
+          </a>
+        </div>
+        <div class="copyright">
+          <h3>© 2026 InvestCalcula</h3>
+          <p>Todos os Direitos Reservados.</p>
+        </div>
+      </article>
+    </footer>
 
-        <noscript>Precisa do JavaScript</noscript>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script type="text/javascript" src="js/script.js" language="JavaScript" charset="utf-8"></script>
-    </body>
+    <noscript>Precisa do JavaScript</noscript>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/script.js"
+      language="JavaScript"
+      charset="utf-8"
+    ></script>
+  </body>
 </html>
